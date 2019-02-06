@@ -1,3 +1,2 @@
 Yet another demo file for git branching
-A change made while using mybranch
 A change made while using master branch
