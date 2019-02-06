@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/pmversion1/v100/issues"
   },
-  "homepage": "https://github.com/pmversion1/v100#readme"
+  "homepage": "https://github.com/pmversion1/v100#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
