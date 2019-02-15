@@ -1,15 +1,14 @@
 var express = require('express'),
   app = express(),
-  //port = 3000,
-  port=8080,
+  port = 3000,
   bodyParser = require('body-parser');
 const body_parser = require('body-parser');
 const urlencoded_parser = body_parser.urlencoded({ extended: false});
 
 const mysql = require("mysql");
 const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
+  host: "52.31.85.242",
+  user: "v1user",
   password: "c0nygre",
   database: "ProductsDB"
 });
@@ -20,11 +19,6 @@ con.connect(function(err){
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
-app.get('/',(req,res)=>{
-  res.sendFile(__dirname + '/index.html');
-});
-
 // GET /products
 app.get('/products',(req,res)=>{
 	  var sql = "SELECT * FROM products";

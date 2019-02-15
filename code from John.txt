@@ -1,0 +1,58 @@
+https://www.npmjs.com/package/node-rest-client (Reference)
+
+//use npm install node-rest=client --save
+
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
+
+// direct way
+client.get("http://localhost:3000/contacts", function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response);
+});
+
+// registering remote methods
+
+client.registerMethod("jsonMethod", "http://localhost:3000/contacts/5c6186d11e0c06191464ab17", "GET");
+
+client.methods.jsonMethod(function (data, response) {
+	console.log("***************** Indirect Way ****************");
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response);
+});
+
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
+
+// set content-type header and data as json in args parameter
+var args = {
+    data: { name: "Ann Oliver", phone: "00353 77665544" },
+    headers: { "Content-Type": "application/json" }
+};
+
+client.post("http://localhost:3000/contacts", args, function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response);
+});
+
+//PUT
+
+args = {
+    data: { name: "Charlene O'Dean", phone: "00353 888999" },
+    headers: { "Content-Type": "application/json" }
+};
+
+client.put("http://localhost:3000/contacts/5c62bcab5e7e721368d27425", args, function (data, response) {
+    // parsed response body as js object
+    console.log(data);
+    // raw response
+    //console.log(response);
+});
