@@ -1,22 +1,21 @@
 {
-  "name": "v100",
+  "name": "restapi",
   "version": "1.0.0",
-  "description": "Repo 1 for training purposes",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pmversion1/v100.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pmversion1/v100/issues"
-  },
-  "homepage": "https://github.com/pmversion1/v100#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1"
   }
 }
